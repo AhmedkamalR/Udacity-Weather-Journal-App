@@ -1,5 +1,6 @@
 let date = new Date(); // get current date
-let newDate = date.getMonth() + '.' + date.getDate() + '.' + date.getFullYear(); // create date
+let newDate =
+  date.getMonth() + 1 + '.' + date.getDate() + '.' + date.getFullYear(); // create date
 
 const userInfo = document.getElementById('userInfo');
 
@@ -12,7 +13,7 @@ const performAction = (e) => {
   if (zipCode !== '') {
     // Url and API key
     const url = 'https://api.openweathermap.org/data/2.5/weather';
-    const apiKey = '8cbe212f307fec07350a7357e57d7d42';
+    const apiKey = '8cbe212f307fec07350a7357e57d7d42&units=metric';
     // checking the exsits of zipcode
     generateBtn.classList.remove('invalid');
     getWeatherData(url, zipCode, apiKey)
